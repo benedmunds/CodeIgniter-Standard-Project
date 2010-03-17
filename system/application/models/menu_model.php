@@ -21,5 +21,3 @@ class Menu_model extends Model {
         return $query->result();
     }
 }
-
-?>

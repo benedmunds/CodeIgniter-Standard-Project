@@ -36,5 +36,3 @@ class Page_model extends Model {
         }
     }
 }
-
-?>

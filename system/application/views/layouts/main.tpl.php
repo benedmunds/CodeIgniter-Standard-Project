@@ -36,7 +36,7 @@
 		</div>
 		
 		<div id="footer">
-			<div id="bottomMenu"><?php $this->load->view('partials/bottomMenu.tpl.php');?></div>
+			<div id="bottomMenu"><?php $this->load->view('partials/bottom_menu.tpl.php');?></div>
 			<div id="copywright"><?php $this->load->view('partials/copywright.tpl.php');?></div>
 		</div>
 		

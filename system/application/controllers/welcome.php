@@ -6,12 +6,9 @@ class Welcome extends MY_Controller {
 		parent::__construct();	
 	}
 	
-	function __destruct() {
-		parent::__destruct();	
-	}
-	
 	function index() {
 		$this->data['title'] = "Welcome";
+		
 		$this->render();
 	}
 }

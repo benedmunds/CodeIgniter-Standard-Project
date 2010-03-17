@@ -68,5 +68,4 @@
 	 * Salt Length
 	 **/
 	$config['salt_length']       = 10;
-	
-?>
+		

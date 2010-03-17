@@ -11,7 +11,7 @@
 
 class MY_Controller extends Controller {
  
-    protected $data = array();
+    protected $data = Array();
     protected $controller_name;
     protected $action_name;
     protected $previous_controller_name;
@@ -21,7 +21,7 @@ class MY_Controller extends Controller {
    
     public function __construct() {
         parent::__construct();
-        $this->load->library(array('session','auth'));
+        $this->load->library(array('session','ion_auth'));
         
         //save the previous controller and action name from session
         $this->previous_controller_name = $this->session->flashdata('previous_controller_name'); 
@@ -31,11 +31,12 @@ class MY_Controller extends Controller {
         $this->controller_name = $this->router->fetch_directory() . $this->router->fetch_class();
         $this->action_name     = $this->router->fetch_method();
         
-        $this->load_defaults();
+        $this->data['content'] = '';
+        $this->data['css']     = '';   
         
     }
-    
-	public function __destruct() {
+ 
+    protected function render($template='main') {
         //save the controller and action names in session
         if ($this->save_previous_url) {
         	$this->session->set_flashdata('previous_controller_name', $this->previous_controller_name);
@@ -45,23 +46,7 @@ class MY_Controller extends Controller {
         	$this->session->set_flashdata('previous_controller_name', $this->controller_name);
         	$this->session->set_flashdata('previous_action_name', $this->action_name);
         }
-    }
- 
-    protected function load_defaults() {
-        $this->data['content'] = '';
-        $this->data['css']     = '';
-    
-        //pass the admin status to the view - for non-critical display elements - should be pre-processed in controller for security
-        if ($this->auth->is_admin()) {
-        	$this->data['isAdmin'] = 1;
-        }
-        else {
-        	$this->data['isAdmin'] = 0;
-        }
-    }
- 
-    protected function render($template='main') {
-        $this->add_title(); //add the title
+    	
         $view_path = $this->controller_name . '/' . $this->action_name . '.tpl.php'; //set the path off the view
         if (file_exists(APPPATH . 'views/' . $view_path)) {
             $this->data['content'] .= $this->load->view($view_path, $this->data, true);  //load the view
@@ -85,4 +70,3 @@ class MY_Controller extends Controller {
     	$this->save_previous_url = true;
     }
 }
-?>

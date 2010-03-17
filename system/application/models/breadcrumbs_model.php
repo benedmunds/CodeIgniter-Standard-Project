@@ -42,5 +42,3 @@ class Breadcrumbs_model extends Model {
     }
 
 }
-
-?>

@@ -42,4 +42,3 @@ class Users_model extends Model {
         return $query->result();
     }
 }
-?>
