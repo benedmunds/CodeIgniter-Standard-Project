@@ -2,7 +2,7 @@
 
 if ( ! class_exists('Controller'))
 {
-	class Controller extends CI_Controller {}
+	class Controller extends MY_Controller {}
 }
 
 class Auth extends Controller {
@@ -37,7 +37,8 @@ class Auth extends Controller {
 
 			//list the users
 			$this->data['users'] = $this->ion_auth->get_users_array();
-			$this->load->view('auth/index', $this->data);
+
+			$this->render();
 		}
 	}
 
@@ -83,7 +84,7 @@ class Auth extends Controller {
 				'type' => 'password',
 			);
 
-			$this->load->view('auth/login', $this->data);
+			$this->render();
 		}
 	}
 
@@ -136,7 +137,7 @@ class Auth extends Controller {
 			);
 
 			//render
-			$this->load->view('auth/change_password', $this->data);
+			$this->render();
 		}
 		else
 		{
