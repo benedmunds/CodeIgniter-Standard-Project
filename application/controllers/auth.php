@@ -175,7 +175,8 @@ class Auth extends Controller {
 			//set any errors and display the form
 			$this->data['message'] = (validation_errors()) ? validation_errors() : $this->session->flashdata('message');
 			$this->data['identity'] = $identity; $this->data['identity_human'] = $identity_human; //added
-			$this->load->view('auth/forgot_password', $this->data);
+
+			$this->render();
 		}
 		else
 		{
