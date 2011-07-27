@@ -1,6 +1,6 @@
 <?php
 
-class Menu_model extends Model {
+class Menu_model extends CI_Model {
 
     var $title   = '';
     var $content = '';

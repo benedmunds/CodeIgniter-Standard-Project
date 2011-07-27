@@ -1,6 +1,6 @@
 <?php
 
-class Page_model extends Model {
+class Page_model extends CI_Model {
 
     var $title   = '';
     var $content = '';

@@ -1,6 +1,6 @@
 <?php
 
-class Users_model extends Model {
+class Users_model extends CI_Model {
 
     var $title   = '';
     var $content = '';
