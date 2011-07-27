@@ -9,7 +9,7 @@
 * 
 */
 
-class MY_Controller extends Controller {
+class MY_Controller extends CI_Controller {
  
     protected $data = Array();
     protected $controller_name;
