@@ -2,7 +2,7 @@
   <?php $numOfItems = count($this->Menu_model->get_menu('main'));?>
   <?php foreach ($this->Menu_model->get_menu('main') as $key => $item):?>
  	 <?php if ($this->session->userdata('group_id') && $item->group_id == $this->session->userdata('group_id') || $item->group_id == '0'):?>
-        <?php if ($item->require_login && $this->auth->logged_in() || !$item->require_login):?>
+        <?php if ($item->require_login && $this->ion_auth->logged_in() || !$item->require_login):?>
 	        	<?php if($key != $numOfItems && $key != 0):?>
 	           		<li class="separator">|</li>
 	            <?php endif;?>
