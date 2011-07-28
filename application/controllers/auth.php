@@ -365,7 +365,7 @@ class Auth extends Controller {
 				'type' => 'password',
 				'value' => $this->form_validation->set_value('password_confirm'),
 			);
-			$this->load->view('auth/create_user', $this->data);
+			$this->render();
 		}
 	}
 
