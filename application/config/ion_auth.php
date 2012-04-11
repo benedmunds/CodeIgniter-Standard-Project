@@ -3,12 +3,12 @@
 * Name:  Ion Auth Config
 * 
 * Author: Ben Edmunds
-* 	  ben.edmunds@gmail.com
+* 		  ben.edmunds@gmail.com
 *         @benedmunds
 *          
 * Added Awesomeness: Phil Sturgeon
 * 
-* Location: http://github.com/benedmunds/CodeIgniter-Ion-Auth/
+* Location: http://github.com/benedmunds/ion_auth/
 *          
 * Created:  10.01.2009 
 * 
@@ -20,9 +20,9 @@
 	/**
 	 * Tables.
 	 **/
-	$config['tables']['groups']  = 'groups';
-	$config['tables']['users']   = 'users';
-	$config['tables']['meta']    = 'meta';
+	$config['tables']['groups']          = 'groups';
+	$config['tables']['users']           = 'users';
+	$config['tables']['users_groups']    = 'users_groups';
 	
 	/**
 	 * Site Title, example.com
@@ -45,16 +45,12 @@
 	$config['admin_group']         = 'admin';
 	 
 	/**
-	 * Meta table column you want to join WITH.
+	 * Users table column and Group table column you want to join WITH.
 	 * Joins from users.id
+	 * Joins from groups.id
 	 **/
-	$config['join']                = 'user_id';
-	
-	/**
-	 * Columns in your meta table,
-	 * id not required.
-	 **/
-	$config['columns']             = array('first_name', 'last_name', 'company', 'phone');
+	$config['join']['users']       = 'user_id';
+	$config['join']['groups']      = 'group_id';
 	
 	/**
 	 * A database column which is used to
@@ -76,6 +72,11 @@
 	 * Email Activation for registration
 	 **/
 	$config['email_activation']    = false;
+
+	/**
+	 * Manual Activation for registration
+	 **/
+	$config['manual_activation']    = false;
 	
 	/**
 	 * Allow users to be remembered and enable auto-login
@@ -91,13 +92,18 @@
 	 * Extend the users cookies everytime they auto-login
 	 **/
 	$config['user_extend_on_login'] = false;
-	
+
 	/**
-	 * Type of email to send (HTML or text)
-	 * Default : html
+	 * Send Email using the builtin CI email class
+	 * if false it will return the code and the identity
 	 **/
-	$config['email_type'] = 'html';
-	
+	$config['use_ci_email']= FALSE;
+
+	/**
+	 * Email content type
+	 **/
+	$config['email_type']           = 'html';
+
 	/**
 	 * Folder where email templates are stored.
      * Default : auth/

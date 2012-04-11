@@ -47,7 +47,7 @@ class MY_Controller extends CI_Controller {
         	$this->session->set_flashdata('previous_action_name', $this->action_name);
         }
     	
-        $view_path = $this->controller_name . '/' . $this->action_name . '.tpl.php'; //set the path off the view
+        $view_path = $this->controller_name . '/' . $this->action_name . '.php'; //set the path off the view
         if (file_exists(APPPATH . 'views/' . $view_path)) {
             $this->data['content'] .= $this->load->view($view_path, $this->data, true);  //load the view
         }
