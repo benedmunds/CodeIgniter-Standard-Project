@@ -1,22 +1,9 @@
-======================================
-CodeIgniter Standard Project (CI2.0.x)
+#CodeIgniter Standard Project
+by [Ben Edmunds](http://benedmunds.com)
 
+###Included
+* CodeIgniter master as a submodule
+  https://github.com/EllisLab/CodeIgniter
 
-by Ben Edmunds
-brought up to current by Tony Dew
-======================================
-
-Just bringing Ben Edmunds' CodeIgniter Standard Project up to date. Includes:
-
-- CodeIgniter 2.0.2
-  http://codeigniter.com
-
-- Ion_Auth master branch as of 2011/07/26
-  https://github.com/benedmunds/CodeIgniter-Standard-Project
-
-
-Thanks,
-
-Tony
-tony@tonydew.com
-@tonydew
+* Ion_Auth 2 branch as a submodule
+  https://github.com/benedmunds/CodeIgniter-Ion-Auth
