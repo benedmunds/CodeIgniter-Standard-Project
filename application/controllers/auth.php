@@ -32,7 +32,7 @@ class Auth extends MY_Controller {
 			$this->data['message'] = (validation_errors()) ? validation_errors() : $this->session->flashdata('message');
 
 			//list the users
-			$this->data['users'] = $this->ion_auth->users()->result();
+			$this->data['users'] = $this->ion_auth->users(array(1,2))->result();
 			foreach ($this->data['users'] as $k => $user)
 			{
 				$this->data['users'][$k]->groups = $this->ion_auth->get_users_groups($user->id)->result();
