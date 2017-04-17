@@ -1,7 +1,7 @@
-#CodeIgniter Standard Project
+# CodeIgniter Standard Project
 by [Ben Edmunds](http://benedmunds.com)
 
-###Included
+### Included
 * CodeIgniter master as a submodule
   https://github.com/EllisLab/CodeIgniter
 
